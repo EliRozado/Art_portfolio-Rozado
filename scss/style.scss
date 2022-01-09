@@ -1,0 +1,83 @@
+
+/* Comienzo de variables y estilos definidos base*/
+$body-style: (
+    background: linear-gradient(#321b3d,  #5c3370),
+    text-color: #d370bb, 
+    font-family: 'Raleway'
+);
+
+$section-box-background: #8e5ea524;
+
+@mixin grid-columns($start, $end){
+    grid-column-start: $start;
+    grid-column-end: $end;
+}
+
+@mixin flex-settings(
+    /*base values*/
+    $direction: row, 
+    $wrap: nowrap, 
+    $flow: row-nowrap,
+    $justify-cont: flex-start, 
+    $align-items: stretch, 
+    $align-cont: flex-start,
+    $gap: 0
+    ){
+    display: flex !important;
+    @if $direction != 'row'{
+        flex-direction: $direction;
+    }
+    @if $wrap != 'nowrap'{
+        flex-wrap: $wrap;
+    }
+    @if $flow != 'row-nowrap'{
+        flex-flow: $flow;
+    }
+    @if $justify-cont != 'flex-start'{
+        justify-content: $justify-cont;
+    }
+    @if $align-items != 'stretch'{
+        align-items: $align-items;
+    }
+    @if $align-cont != 'flex-start'{
+        align-content: $align-cont;
+    }
+    @if $gap != 0{
+        gap: $gap;
+    }
+}
+
+*{padding:0; margin:0;}
+
+body{
+    background: map-get($body-style, background);
+    color: map-get($body-style, text-color);
+    font-family: map-get($body-style, font-family), sans-serif;
+    min-height: 100vh;
+}
+
+.grid{
+    display: grid;
+    max-width: 1440px;
+    padding: 10px;
+    margin: auto;
+    grid-template-columns: 50px auto auto auto 50px;
+    .grid-section{
+        grid-column-start: 2;
+        grid-column-end: 5;
+        background: $section-box-background;
+        padding: 30px 30px;
+        border-radius: 30px;
+    }
+}
+/* mobile */
+@media screen and (max-width:768px){
+    .grid{
+        grid-template-columns: 10px auto auto auto 10px;
+    }
+}
+
+@import "header";
+@import "footer";
+@import "index";
+@import "illustration";

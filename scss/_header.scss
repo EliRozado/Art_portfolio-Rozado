@@ -1,0 +1,49 @@
+$nav-links-style:(
+    font-weight: 300,
+    color: #b6658e,
+    color-hover:#e7a294,
+);
+
+$website-title:(
+    font-style: italic,
+    font-weight: 200,
+);
+
+.grid-header{
+    @include grid-columns(1,6);
+    @include flex-settings($justify-cont: space-between);
+    padding: 15px 20px;
+    h1{
+        font-style: map-get($website-title, font-style); 
+        font-weight: map-get($website-title, font-weight);
+    }
+}
+
+.nav-menu{
+    @include flex-settings($align-items: flex-end, $gap: 15px);
+    padding-top:15px;
+    list-style-type: none;
+    font-size: 17px;
+    a{
+        text-decoration: none;
+        font-weight: map-get($nav-links-style, font-weight);
+        color: map-get($nav-links-style, color);
+        transition: all 300ms;
+        &:hover{
+            color:map-get($nav-links-style, color-hover);
+        }
+    }
+} 
+
+
+/* mobile */
+@media screen and (max-width:768px){
+    .grid-header{
+        @include flex-settings($direction: column, $align-items: center);
+        .nav-menu {
+            a{
+                font-size: 15px;
+            }
+        }
+    }    
+}

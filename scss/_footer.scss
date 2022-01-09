@@ -1,0 +1,29 @@
+$sm-link-style: (
+    border: 1px solid #9e528c,
+    border-radius: 20px,
+    border-hover: 1px solid #b35d9f
+);
+
+.grid-footer{
+    @include grid-columns(1,6);
+    @include flex-settings($direction: column, $align-items: center, $gap: 10px);
+    padding: 10px;
+    font-size: 12px;
+
+    .sm-links{
+        @include flex-settings($gap: 10px);
+        list-style: none;
+        a{
+            img{
+                border: map-get($sm-link-style, border);
+                border-radius: map-get($sm-link-style, border-radius);
+                opacity: 0.7;
+                transition: all 400ms ease;
+                &:hover{
+                    border: map-get($sm-link-style, border-hover);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
