@@ -1,0 +1,59 @@
+$form-styles:(
+    bg-color: #ff9ee7a4,
+    border: 1px solid rgba(10,5,13,0.25),
+);
+
+$form-btn:(
+    color: #2a1637,
+    bg-color: #b35d9f,
+    border: 1px solid rgba(29,16,37,0.4),
+    bg-color-hover: #c768b1
+);
+
+.contact-section{
+    @include grid-columns(3,4);
+    @include flex-settings($direction: column, $gap: 10px);
+    background: $section-box-background;
+    padding: 50px 100px;
+    border-radius: 30px;
+    h2{
+        text-align: center;
+    }
+    .form-style{
+        @include flex-settings($direction: column, $gap: 15px);
+        .form{
+            @include flex-settings($direction: column, $gap: 5px);
+            input{
+                width: auto;
+                color: map-get($form-btn, color);
+                background-color: map-get($form-styles, bg-color);
+                border: map-get($form-styles, border);
+                padding: 10px;
+                border-radius: 5px;
+            }
+            textarea{
+                @extend input;
+                resize: none;
+            }
+        }       
+        .btn{
+            color: map-get($form-btn, color);
+            background: map-get($form-btn, bg-color);
+            border: map-get($form-btn, border);
+            width: 70px;
+            margin:auto;
+            padding: 10px;    
+            border-radius: 10px;
+            transition: all 400ms ease;
+            &:hover{
+                background: map-get($form-btn, bg-color-hover);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px){
+    .contact-section{
+        padding: 20px 30px;
+    }
+}

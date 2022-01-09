@@ -172,3 +172,47 @@ body {
       .gallery .item img {
         max-height: 100%;
         min-width: 100%; } }
+
+.contact-section {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  display: flex !important;
+  flex-direction: column;
+  gap: 10px;
+  background: #8e5ea524;
+  padding: 50px 100px;
+  border-radius: 30px; }
+  .contact-section h2 {
+    text-align: center; }
+  .contact-section .form-style {
+    display: flex !important;
+    flex-direction: column;
+    gap: 15px; }
+    .contact-section .form-style .form {
+      display: flex !important;
+      flex-direction: column;
+      gap: 5px; }
+      .contact-section .form-style .form input, .contact-section .form-style .form textarea {
+        width: auto;
+        color: #2a1637;
+        background-color: #ff9ee7a4;
+        border: 1px solid rgba(10, 5, 13, 0.25);
+        padding: 10px;
+        border-radius: 5px; }
+      .contact-section .form-style .form textarea {
+        resize: none; }
+    .contact-section .form-style .btn {
+      color: #2a1637;
+      background: #b35d9f;
+      border: 1px solid rgba(29, 16, 37, 0.4);
+      width: 70px;
+      margin: auto;
+      padding: 10px;
+      border-radius: 10px;
+      transition: all 400ms ease; }
+      .contact-section .form-style .btn:hover {
+        background: #c768b1; }
+
+@media screen and (max-width: 768px) {
+  .contact-section {
+    padding: 20px 30px; } }

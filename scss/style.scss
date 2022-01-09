@@ -63,8 +63,7 @@ body{
     margin: auto;
     grid-template-columns: 50px auto auto auto 50px;
     .grid-section{
-        grid-column-start: 2;
-        grid-column-end: 5;
+        @include grid-columns(2,5);
         background: $section-box-background;
         padding: 30px 30px;
         border-radius: 30px;
@@ -81,3 +80,5 @@ body{
 @import "footer";
 @import "index";
 @import "illustration";
+@import "web_design";
+@import "contact";
