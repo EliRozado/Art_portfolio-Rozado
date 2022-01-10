@@ -59,7 +59,7 @@ body {
     flex-direction: column;
     align-items: center; }
     .grid-header .nav-menu a {
-      font-size: 15px; } }
+      font-size: 14px; } }
 
 .grid-footer {
   grid-column-start: 1;
@@ -173,6 +173,66 @@ body {
         max-height: 100%;
         min-width: 100%; } }
 
+.web-section {
+  display: flex !important;
+  flex-direction: column;
+  gap: 15px; }
+  .web-section .project-gallery {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(3, 1fr); }
+    .web-section .project-gallery .project {
+      width: 100%;
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px; }
+      .web-section .project-gallery .project .text {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        opacity: 0;
+        transition: all 400ms ease;
+        color: white; }
+        .web-section .project-gallery .project .text a {
+          padding: 10px;
+          text-decoration: none;
+          border: 1px solid #ebbaba;
+          border-radius: 20px;
+          color: white;
+          background: #b35d9f;
+          transition: all 400ms ease; }
+          .web-section .project-gallery .project .text a:hover {
+            background: #9b4788; }
+      .web-section .project-gallery .project:hover .text {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.6); }
+      .web-section .project-gallery .project img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+
+/* mobile */
+@media screen and (max-width: 768px) {
+  .project-gallery {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 5px; }
+    .project-gallery .proyect {
+      height: 30vh;
+      flex-grow: 1; }
+      .project-gallery .proyect img {
+        max-height: 100%;
+        min-width: 100%; } }
+
 .contact-section {
   grid-column-start: 3;
   grid-column-end: 4;
@@ -216,3 +276,18 @@ body {
 @media screen and (max-width: 768px) {
   .contact-section {
     padding: 20px 30px; } }
+
+/* animations */
+@keyframes fade-in-top {
+  from {
+    opacity: 0;
+    transform: translateY(-15px); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.anim-index {
+  animation: fade-in-top ease 2s forwards; }
+
+.anim-pages {
+  animation: fade-in-top ease 1s forwards; }

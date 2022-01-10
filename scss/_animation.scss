@@ -1,0 +1,19 @@
+/* animations */
+@keyframes fade-in-top{
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.anim-index{
+    animation: fade-in-top ease 2s forwards;
+}
+
+.anim-pages{
+    animation: fade-in-top ease 1s forwards;
+}

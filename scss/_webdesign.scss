@@ -1,0 +1,73 @@
+$link-btn: (
+    border: 1px solid rgb(235, 186, 186),
+    bg: #b35d9f,
+    bg-hover: #9b4788,
+    color: white
+);
+
+.web-section{
+    @include flex-settings($direction: column, $gap:15px);
+    .project-gallery{
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(3, 1fr);
+        .project{
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            
+            .text{
+                @include flex-settings($direction: column, $justify-cont: center, $align-items: center, $gap: 10px);
+                position: absolute;
+                top:0;
+                z-index:1;
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                opacity: 0;
+                transition: all 400ms ease;
+                color: white;
+                a{
+                    padding: 10px;
+                    text-decoration: none; 
+                    border: map-get($link-btn, border);
+                    border-radius: 20px;
+                    color: map-get($link-btn, color);
+                    background: map-get($link-btn, bg);
+                    transition: all 400ms ease;
+                    &:hover{
+                        background: map-get($link-btn, bg-hover);
+                    }
+                }
+            }
+            &:hover{
+                .text{
+                    opacity: 1;
+                    background: rgba(0, 0, 0, 0.6);          
+                }
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+/* mobile */
+@media screen and (max-width:768px){
+    .project-gallery{
+        @include flex-settings($wrap: wrap, $gap: 5px);
+        .proyect {
+            height: 30vh;
+            flex-grow: 1;
+            img{
+                max-height: 100%;
+                min-width: 100%;
+            }   
+        }
+    }
+}
