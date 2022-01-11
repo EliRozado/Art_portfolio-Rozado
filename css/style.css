@@ -205,7 +205,6 @@ body {
         .web-section .project-gallery .project .text a {
           padding: 10px;
           text-decoration: none;
-          border: 1px solid #ebbaba;
           border-radius: 20px;
           color: white;
           background: #b35d9f;
@@ -290,4 +289,4 @@ body {
   animation: fade-in-top ease 2s forwards; }
 
 .anim-pages {
-  animation: fade-in-top ease 1s forwards; }
+  animation: fade-in-top ease 2s forwards; }

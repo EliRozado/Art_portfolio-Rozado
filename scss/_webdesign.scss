@@ -1,5 +1,4 @@
 $link-btn: (
-    border: 1px solid rgb(235, 186, 186),
     bg: #b35d9f,
     bg-hover: #9b4788,
     color: white
@@ -32,7 +31,6 @@ $link-btn: (
                 a{
                     padding: 10px;
                     text-decoration: none; 
-                    border: map-get($link-btn, border);
                     border-radius: 20px;
                     color: map-get($link-btn, color);
                     background: map-get($link-btn, bg);
